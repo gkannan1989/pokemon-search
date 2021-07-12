@@ -1,0 +1,30 @@
+.navbar {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  @media only screen and (max-width: 600px) { 
+    margin-bottom: 2rem;
+  }
+}
+
+.navbar .logo-container {
+  max-height: 100%;
+  img {
+    height: 100%;
+  }
+}
+
+.navbar .options {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar .options .option {
+  padding: 10px 15px;
+  cursor: pointer;
+}

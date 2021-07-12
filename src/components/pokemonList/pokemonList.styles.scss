@@ -1,0 +1,49 @@
+.list-group {
+  list-style: none;
+  margin: 0;
+  margin-top: 1em;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  width: 100%;
+  li {
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+      background-color: #ffde00;
+    }
+    a {
+      width: 100%;
+      height: 100%;
+      text-decoration: inherit;
+      color: inherit;
+      display: flex;
+      & > * {
+        padding: 0.5em;
+      }
+      .id {
+        border-right: 1px solid #ccc;
+        min-width: 3rem;
+        display: flex;
+        justify-content: center;
+      }
+      .name {
+        flex: 1;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+.list-group li:first-child {
+  border-top: 0;
+}
+.list-group li:first-child:hover {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.list-group li:last-child:hover {
+  border-radius: 0 0 0.5rem 0.5rem;
+}

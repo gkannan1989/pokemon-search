@@ -1,0 +1,162 @@
+.pokemon-list {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  margin: auto;
+  z-index: 10;
+}
+
+.search {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 100%;
+  &-input {
+    margin-bottom: 1rem;
+  }
+}
+.search-input {
+  width: 425px;
+}
+.search-btn {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.favourites {
+  display: flex;
+  font-weight: bold;
+  flex-direction: row;
+  flex-flow: wrap;
+  margin: 0 auto;
+  list-style-type: none; 
+  padding: 0;
+  @media only screen and (max-width: 800px) { 
+    width: 100%;
+    justify-content: center;
+  }
+  @media only screen and (min-width: 800px) { 
+    width: 65%;
+    justify-content: left;
+  }
+}
+.pokemon-info {
+  clear: both;
+}
+.pokemon-name {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin:0;
+    font-size: 12px;
+    text-align: center;
+}
+.img-fav-picture {
+  border-radius: 30px;
+  position: absolute;
+    top: 0px;
+    width: 42px;
+    z-index: 1;
+    cursor: pointer;
+    right: 0px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: visible;
+  opacity: 1;
+  width: 100%;
+  overflow: scroll;
+  padding-top: 100px;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  position: relative;
+  transition: all 5s ease-in-out;
+  height: 70%;
+  overflow: auto;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.pokemon-search {
+  margin-right: 15px;
+}
+.favourites {
+  background: transparent url("../../assets/content_bg.png") left top;
+    background-size: 100% 1px;
+}
+
+.fav-wrapper {
+  margin-top: 3em;
+}
+.fav-label {
+  width: 100%;
+  padding: .5em;
+   
+    text-align: left;
+    font-weight: normal;
+}
+.fav-title {
+  font-weight: bold;
+  text-align: center;
+}
+.add-to-fav-picture {
+  width: auto;
+  height: 18px;
+}

@@ -1,0 +1,13 @@
+.badge {
+    padding: 5px 10px 5px 8px;
+    font-size: .8rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border-top: none;
+    border-right: none;
+    letter-spacing: 1px;
+    @media only screen and (max-width: 500px) {
+        width: 100%;
+        margin: 2px;
+    }
+}

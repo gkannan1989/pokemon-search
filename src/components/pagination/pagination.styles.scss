@@ -1,0 +1,16 @@
+.buttons {
+  margin-top: 2rem;
+  width: 100%;
+  & > *:first-child {
+    position: relative;
+    float: left;
+  }
+  & > *:last-child {
+    position: relative;
+    float: right;
+  }
+}
+.suggestion-list {
+  padding-bottom: 2em;
+  margin-right: 0px;
+}

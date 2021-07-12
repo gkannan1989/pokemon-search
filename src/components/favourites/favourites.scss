@@ -1,0 +1,45 @@
+.fav-name {
+  font-weight: normal;
+}
+.fav-remove {
+  cursor: pointer;
+}
+.favourites-label {
+  font-weight: normal;
+}
+.fav-picture-container {
+  list-style: none;
+  display: block;
+  float: left;
+  position: relative;
+  width: auto;
+  margin: 4px;
+  @media only screen and (max-width: 320px) { 
+    width: 100%;
+  }
+}
+
+.fav-picture-container figure {
+  position: relative;
+  border-radius: 15px;
+}
+.fav-picture-container figure img {
+  width: 150px;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  @media only screen and (max-width: 320px) { 
+    width: 100%;
+  }
+}
+.fav-picture-container figure:hover img {
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
+.fav-picture-container figure{
+  background: #F2F2F2;
+  position: relative;
+  margin: 0;
+}
