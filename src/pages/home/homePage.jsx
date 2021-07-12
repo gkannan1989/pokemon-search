@@ -6,14 +6,13 @@ import Pagination from "../../components/pagination/pagination";
 import PokemonList from "../../components/pokemonList/pokemonList";
 import Favourites from "../../components/favourites/favourites";
 import close from '../../assets/transparent-close.png';
+import { REMOVE_POKEMON, POKEMON_API } from "../../helpers/constants";
 import './homePage.styles.scss';
 
 function HomePage() {
   const [pokemon, setPokemon] = useState([]);
   const { state, dispatch } = useContext(Store);
-  const [currentPageUrl, setCurrentPageUrl] = useState(
-    'https://pokeapi.co/api/v2/pokemon',
-  );
+  const [currentPageUrl, setCurrentPageUrl] = useState(POKEMON_API);
   const [nextPageUrl, setNextPageUrl] = useState();
   const [prevPageUrl, setPrevPageUrl] = useState();
   const [details, setDetails] = useState(false);
@@ -42,7 +41,7 @@ function HomePage() {
 
   function removeFav(id) {
     dispatch({
-      type: 'REMOVE_POKEMON',
+      type: REMOVE_POKEMON,
       payload: id,
     });
   }

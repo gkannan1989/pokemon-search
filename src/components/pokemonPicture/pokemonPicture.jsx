@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Loading from '../loading/loading';
 import './pokemonPicture.styles.scss';
+import { POKEMON_IMAGE_API, POKEMON_IMAGE_API_EXT } from "../../helpers/constants.js"
 
 function Picture({ id }) {
   const [loaded, setLoaded] = useState(false);
@@ -11,7 +12,7 @@ function Picture({ id }) {
       <img
         className="pokemon-picture"
         alt="Pokemon"
-        src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`}
+        src={`${POKEMON_IMAGE_API}/${id}${POKEMON_IMAGE_API_EXT}`}
         onLoad={handleImageLoaded}
         style={!loaded ? { display: 'none' } : {}}
       />

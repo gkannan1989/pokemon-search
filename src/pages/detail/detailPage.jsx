@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import Store from '../../store/context';
 import Badge from '../../components/badge/badge';
 import Loading from '../../components/loading/loading';
+import { GET_POKEMON, REMOVE_POKEMON, POKEMON_API, POKEMON_IMAGE_API, POKEMON_IMAGE_API_EXT } from "../../helpers/constants";
 import Picture from '../../components/pokemonPicture/pokemonPicture';
 import './detailPage.styles.scss';
 
@@ -19,7 +20,7 @@ function DetailPage({ searchName }) {
   useEffect(() => {
     const doFetch = async () => {
       try {
-        await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
+        await fetch(`${POKEMON_API}/${name}`)
           .then(res => res.json())
           .then(async data => {
             setPokemon(data);
@@ -38,10 +39,10 @@ function DetailPage({ searchName }) {
     const favourite = {
       name,
       id,
-      image: `https://pokeres.bastionbot.org/images/pokemon/${name}.png`,
+      image: `${POKEMON_IMAGE_API}/${id}${POKEMON_IMAGE_API_EXT}`,
     };
     dispatch({
-      type: 'SET_POKEMON',
+      type: GET_POKEMON,
       payload: [favourite],
     });
   };
@@ -49,7 +50,7 @@ function DetailPage({ searchName }) {
   const removeFromFav = () => {
     const { id } = pokemon;
     dispatch({
-      type: 'REMOVE_POKEMON',
+      type: REMOVE_POKEMON,
       payload: id,
     });
   };

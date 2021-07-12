@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 
 import padWithZeros from '../../helpers/utils';
 import close from '../../assets/transparent-close.png';
+import { POKEMON_THUMP_IMG } from '../../helpers/constants';
 import './favourites.scss';
+
 
 const Favourites = ({ items, removeFav }) => {
   const { id, name } = items;
@@ -22,10 +24,7 @@ const Favourites = ({ items, removeFav }) => {
             <img
               className="fav-pokemon-picture"
               alt="Pokemon"
-              src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${padWithZeros(
-                id,
-                3,
-              )}.png`}
+              src={`${POKEMON_THUMP_IMG}/${padWithZeros(id,3)}.png`}
             />
           </Link>
         </figure>
