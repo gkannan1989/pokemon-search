@@ -9,7 +9,7 @@
 https://www.loom.com/share/db2a2a0282684be08076d9922ea5c0cf
 
 # Demo
-<a href="https://compassionate-feynman-19b86b.netlify.app/" > Demo </a>
+<a href="https://60ec1139a46931d87327b679--compassionate-feynman-19b86b.netlify.app/" > Demo </a>
 
 # Installation
 ````````````````````````````````````````````````````````````````````````````
