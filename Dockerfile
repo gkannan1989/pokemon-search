@@ -1,29 +1,20 @@
-# TODO: Improve caching
-# Because this is multi-stage the output image might not be giving us the
-# best caching layer for subsequent builds.
-ARG REGION
-ARG ENVIRONMENT=dev
-#BUILDKIT_INLINE_CACHE image created
+# pull official base image
+FROM node:14.15
 
-###
-# Stage: BUILD
-#
-LABEL maintainer="Kannan Ganesan <itskannan1989@gmail.com>"
-
+# set working directory
 WORKDIR /app
 
-# FIXME: Think about how to coordinate this across the monorepo - WTF is this?
-COPY . .
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
 
-###
-# Stage: TEST
-#
-
-COPY --from=build /app .
-
-# This calls yarn build because of yarn postinstall
+# install app dependencies
+COPY package.json ./
+COPY package-lock.json ./
 RUN yarn install --frozen-lockfile --non-interactive
 RUN yarn lint
 
-# allows us to call commands as `docker run test` rather than `docker run yarn test`
-ENTRYPOINT [ "yarn" ]
+# add app
+COPY . ./
+
+# start app
+CMD ["yarn"]
